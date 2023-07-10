@@ -1,23 +1,24 @@
 {
-  "name": "parcel-project-template",
+  "name": "js-marvel-project",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://goitacademy.github.io/parcel-project-template",
+  "homepage": "https://d-tysh.github.io/js-marvel-project",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /parcel-project-template/"
+    "build": "parcel build src/*.html --public-url /js-marvel-project/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
+    "url": "git+https://github.com/d-tysh/js-marvel-project.git"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Dima",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/goitacademy/parcel-project-template/issues"
+    "url": "https://github.com/d-tysh/js-marvel-project/issues"
   },
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "modern-normalize": "^1.1.0"
   },
   "devDependencies": {

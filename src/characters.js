@@ -1,0 +1,2 @@
+import { getCharacters } from "./getResource";
+

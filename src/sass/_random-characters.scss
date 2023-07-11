@@ -24,7 +24,6 @@
         width: 496px;
         height: 704px;
         object-fit: cover;
-        // object-fit: scale-down;
     }
 
     &__title {
@@ -62,10 +61,4 @@
         display: block;
         margin-left: auto;
     }
-}
-
-.loading {
-    color: rgba(250, 250, 250, 1);
-    text-align: center;
-    font-size: 50px;
 }

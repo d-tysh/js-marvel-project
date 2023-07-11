@@ -1,0 +1,1 @@
+{"mappings":"gfAAAA,EAAA,Q","sources":["src/characters.js"],"sourcesContent":["import { getCharacters } from \"./getResource\";\n\n"],"names":["parcelRequire"],"version":3,"file":"characters.2f1ca755.js.map"}

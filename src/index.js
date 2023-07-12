@@ -18,9 +18,6 @@ function heroListHandler(e) {
         return;
     }
 
-    clearInterval(timer1);
-    timer1 = null;
-
     [...heroList.children].forEach(item => item.classList.remove('active'));
     [...heroCharacters.children].forEach(item => item.classList.remove('active'));
     e.target.classList.add('active');
@@ -66,7 +63,8 @@ function getRandomCharacters() {
 
             randomCharactersList.children[0].classList.add('active');
             randomCharImg.src = randomCharactersList.children[0].dataset.img;
-
+            randomCharImg.alt = randomCharactersList.children[0].dataset.name;
+            
             if (randomCharImg.src === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
                 randomCharImg.style.height = '400px';
             }
@@ -80,7 +78,7 @@ getRandomCharacters();
 
 function createRandCharList(thumbnail, name, description) {
     return `
-        <li class="random-characters__list-item" data-img=${thumbnail.path + '.' + thumbnail.extension}>
+        <li class="random-characters__list-item" data-img=${thumbnail.path + '.' + thumbnail.extension} data-name=${name}>
             <p class="random-characters__name">${name}</p>
             <p class="random-characters__description">${description ? description : 'No description for this character.'}</p>
         </li>

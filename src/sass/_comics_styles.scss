@@ -1,4 +1,55 @@
-.characters-filter {
+.hero {
+    color: #fff;
+    
+    &__title {
+        font-size: 150px;
+        margin-bottom: 16px;
+        line-height: 1;
+    }
+    
+    &__container {
+        background-image: url('../images/comics/bg-hero-comics.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-x: right;
+        display: flex;
+        background-color: #0C0B0B;
+        gap: 65px;
+        padding-bottom: 40px;
+        height: 780px;
+    }
+
+    &__description {
+        padding-top: 210px;
+        padding-right: 11px;
+    }
+    
+    &__information {
+        margin-left: 88px;
+        font-size: 16px;
+        width: 436px;
+    }
+
+    &__subtitle {
+        margin-bottom: 16px;
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.7);
+        text-transform: uppercase;
+    }
+
+    &__back-home-link {
+        display: block;
+        margin-left: auto;
+        margin-top: auto;
+    }
+
+    &__btn {
+        background-color: inherit;
+        border: 1px solid rgba(250, 250, 250, 0.5);
+    }
+}
+
+.comics {
 
     &__container {
         background-color: #0C0B0B;

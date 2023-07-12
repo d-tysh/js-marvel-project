@@ -1,13 +1,10 @@
 .header {
-    // display: none;
     position: sticky;
-    top: 0;
-    left: 0;
     z-index: 100;
     
     &__container {
         background-color: #0C0B0B;
-        padding: 24px;
+        padding: 24px 0;
         display: flex;
         justify-content: space-between;
         align-items: center;

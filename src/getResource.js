@@ -4,7 +4,7 @@ const API_PUBLIC_KEY = 'a85ca2e1a3f06b7ee3183f960e5fdc88';
 async function getCharacters(limit, offset) {
 
     const request = await fetch(`${BASE_URL}characters?limit=${limit}&offset=${offset}&apikey=${API_PUBLIC_KEY}`);
-    
+
     if (!request.ok) {
         throw new Error(request.status);
     }
@@ -14,7 +14,17 @@ async function getCharacters(limit, offset) {
 
 async function getCharactersBySearch(name, orderBy, limit, offset) {
     const request = await fetch(`${BASE_URL}characters?nameStartsWith=${name}&orderBy=${orderBy}&limit=${limit}&offset=${offset}&apikey=${API_PUBLIC_KEY}`);
-    
+
+    if (!request.ok) {
+        throw new Error(request.status);
+    }
+
+    return request.json();
+}
+
+async function getCharacterById(id) {
+    const request = await fetch(`${BASE_URL}characters/${id}?apikey=${API_PUBLIC_KEY}`);
+
     if (!request.ok) {
         throw new Error(request.status);
     }
@@ -24,7 +34,7 @@ async function getCharactersBySearch(name, orderBy, limit, offset) {
 
 async function getComics(limit, offset) {
     const request = await fetch(`${BASE_URL}comics?limit=${limit}&offset=${offset}&apikey=${API_PUBLIC_KEY}`);
-    
+
     if (!request.ok) {
         throw new Error(request.status);
     }
@@ -42,4 +52,14 @@ async function getComicsBySearch(title, format, orderBy, limit, offset) {
     return request.json();
 }
 
-export {getCharacters, getCharactersBySearch, getComics, getComicsBySearch};
+async function getComicsById(id) {
+    const request = await fetch(`${BASE_URL}comics/${id}?apikey=${API_PUBLIC_KEY}`);
+
+    if (!request.ok) {
+        throw new Error(request.status);
+    }
+
+    return request.json();
+}
+
+export { getCharacters, getCharactersBySearch, getCharacterById, getComics, getComicsBySearch, getComicsById };

@@ -155,3 +155,74 @@
     font-size: 40px;
     color: rgba(250, 250, 250, 1);
 }
+
+.comic-info {
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    height: 70%;
+
+    &__img {
+        border-radius: 10px;
+        object-fit: cover;
+        width: 500px;
+        max-height: 700px;
+    }
+
+    &__information {
+        background-color: rgba(23, 23, 23, 1);
+        padding: 20px;
+        border-radius: 10px;
+        color: rgba(250, 250, 250, 1);
+    }
+
+    &__title {
+        font-size: 30px;
+        max-width: 500px;
+        margin-right: 40px;
+    }
+
+    &__description {
+        border-bottom: 2px solid rgba(250, 250, 250, 1);
+        padding: 10px 0;
+        margin-bottom: 20px;
+        max-width: 500px;
+    }
+
+    &__char-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    &__char-list {
+        padding: 0 20px;
+        max-width: 500px;
+        height: 300px;
+        overflow-y: scroll;
+    }
+
+    &__sale-info-list {
+        display: flex;
+        gap: 30px;
+        margin: 20px 0;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(250, 250, 250, 1);
+
+        & span {
+            color:rgba(250, 250, 250, 0.3)
+        }
+    }
+
+    &__btn-close {
+        position: absolute;
+        color: rgba(250, 250, 250, 1);
+        background-color: rgba(23, 23, 23, 1);
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(250, 250, 250, 1);
+        border-radius: 20px;
+        right: 0;
+        top: -50px;
+    }
+}

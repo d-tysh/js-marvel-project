@@ -1,4 +1,6 @@
-import { getComics, getComicsBySearch } from "./getResource";
+import * as basicLightbox from 'basiclightbox';
+
+import { getComics, getComicsBySearch, getComicsById } from "./getResource";
 
 const comicsList = document.querySelector('.comics__list');
 const formComicsFilter = document.querySelector('.comics__form');
@@ -21,6 +23,7 @@ function getComicsList() {
     getComics(limit, offset)
         .then(result => {
             createComicsList(result.data.results);
+            comicsList.addEventListener('click', openComicInfo);
         })
         .catch(err => console.error(err));
 }
@@ -66,9 +69,57 @@ function onSearchComics(e) {
         .catch(err => console.error(err));
 }
 
-function createMarkup(thumbnail, name) {
+function openComicInfo(e) {
+    if (!e.target.closest(('.comics__list-item'))) {
+        return;
+    }
+
+    const { id } = e.target.closest('.comics__list-item').dataset;
+
+    getComicsById(id)
+        .then(result => {
+            console.log(result.data.results[0]);
+
+            const {thumbnail, title, description, characters, format, prices} = result.data.results[0];
+            const instance = basicLightbox.create(`
+            <div class='comic-info'>
+                    <button class='comic-info__btn-close'>X</button>
+                    <img class='comic-info__img' src=${thumbnail.path + '.' + thumbnail.extension} alt=${title}>
+                    <div class='comic-info__information'>
+                        <p class='comic-info__title'>${title}</p>
+                        <p class='comic-info__description'>${description ? description : 'No description for this comic.'}</p>
+                        <ul class='comic-info__sale-info-list list'>
+                            <li class='comic-info__sale-info-list-item'>
+                                <span>FORMAT</span>
+                                <p>${format}</p>
+                            </li>
+                            <li class='comic-info__sale-info-list-item'>
+                                <span>PRICE</span>
+                                <p>${prices[0].price}</p>
+                            </li>
+                        </ul>
+                        <p class='comic-info__char-title'>Characters</p>
+                        <ul class='comic-info__char-list'>
+                            ${
+                                characters.items.length ? characters.items.map(item => `
+                                    <li class='comic-characters-list-item'>${item.name}</li>
+                                `).join('') : 'No data about characters.'
+                            }
+                        </ul>
+                    </div>
+                </div>
+            `);
+
+            instance.show()
+
+            document.querySelector('.comic-info__btn-close').addEventListener('click', () => instance.close());
+        })
+        .catch(error => console.error(error));
+}
+
+function createMarkup(id, thumbnail, name) {
     return `
-        <li class="comics__list-item">
+        <li class="comics__list-item" data-id=${id}>
             <img src=${thumbnail.path + '.' + thumbnail.extension} alt=${name}>
             <p>${name}</p>
         </li>
@@ -76,8 +127,8 @@ function createMarkup(thumbnail, name) {
 }
 
 function createComicsList(arr) {
-    const Comics = arr.map(({ thumbnail, title }) => {
-        return createMarkup(thumbnail, title);
+    const Comics = arr.map(({ id, thumbnail, title }) => {
+        return createMarkup(id, thumbnail, title);
     }).join('');
     
     loading.hidden = true;

@@ -55,7 +55,6 @@
         background-color: #0C0B0B;
         padding-top: 64px;
         padding-bottom: 64px;
-        width: 1440px;
     }
 
     &__form {
@@ -119,7 +118,7 @@
         & img {
             border-radius: 8px;
             width: 100%;
-            height: 300px;
+            height: 250px;
             object-fit: cover;
         }
     }
@@ -161,13 +160,13 @@
     margin: 0 auto;
     display: flex;
     gap: 20px;
-    height: 70%;
+    max-width: 80%;
 
     &__img {
+        width: 550px;
+        height: 490px;
         border-radius: 10px;
         object-fit: cover;
-        width: 500px;
-        max-height: 700px;
     }
 
     &__information {
@@ -175,11 +174,12 @@
         padding: 20px;
         border-radius: 10px;
         color: rgba(250, 250, 250, 1);
+        height: 450px;
+        overflow-y: scroll;
     }
 
     &__title {
         font-size: 30px;
-        max-width: 500px;
         margin-right: 40px;
     }
 
@@ -188,6 +188,7 @@
         padding: 10px 0;
         margin-bottom: 20px;
         max-width: 500px;
+        max-height: 500px;
     }
 
     &__char-title {
@@ -197,9 +198,7 @@
 
     &__char-list {
         padding: 0 20px;
-        max-width: 500px;
-        height: 300px;
-        overflow-y: scroll;
+        max-height: 200px;
     }
 
     &__sale-info-list {

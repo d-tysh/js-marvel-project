@@ -64,8 +64,10 @@ function getRandomCharacters() {
             randomCharactersList.children[0].classList.add('active');
             randomCharImg.src = randomCharactersList.children[0].dataset.img;
             randomCharImg.alt = randomCharactersList.children[0].dataset.name;
-            
+
             if (randomCharImg.src === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
+                randomCharImg.style.height = '350px';
+            } else {
                 randomCharImg.style.height = '400px';
             }
 
@@ -94,8 +96,8 @@ function onCharClick(e) {
     e.target.closest('.random-characters__list-item').classList.add('active');
     randomCharImg.src = e.target.closest('.random-characters__list-item').dataset.img;
     if (randomCharImg.src === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
-        randomCharImg.style.height = '400px';
+        randomCharImg.style.height = '350px';
     } else {
-        randomCharImg.style.height = '704px';
+        randomCharImg.style.height = '400px';
     }
 }

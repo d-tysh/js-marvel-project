@@ -1,14 +1,14 @@
 .header {
-    position: sticky;
+    position: relative;
     z-index: 100;
-    top: 0;
     
     &__container {
-        background-color: #0C0B0B;
-        padding: 24px 0;
+        background-color: rgba(12, 11, 11);
+        padding: 10px 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        z-index: 100;
     }
 
     &__search-form {
@@ -22,6 +22,7 @@
             padding-right: 24px;
             color: #fff;
             border-radius: 21px;
+            width: 200px;
         }
 
         & button {
@@ -36,5 +37,47 @@
 
     &__icon-search {
         fill: #fff;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header {
+        position: sticky;
+        top: 0;
+        left: 0;
+
+        &__logo img {
+            width: 160px;
+        }
+
+        &__search-form {
+            width: 120px;
+
+            & input {
+                width: 130px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    .header {
+        position: sticky;
+        top: 0;
+        left: 0;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .header {
+        &__container {
+            position: fixed;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            background-color: rgba(12, 11, 11, 0.7);
+        }
     }
 }

@@ -120,8 +120,6 @@
             gap: 60px;
         }
 
-
-
         &__description {
             padding-top: 140px;
             width: 100%;
@@ -152,7 +150,7 @@
         }
 
         & img {
-            width: 160px;
+            width: 170px;
         }
 
         &__character-description {
@@ -163,6 +161,10 @@
 
         &__first-picture {
             margin-top: 80px;
+        }
+
+        &__second-picture {
+            right: -16px;
         }
     }
 }

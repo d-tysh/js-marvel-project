@@ -13,7 +13,8 @@
 
     &__search-form {
         position: relative;
-        
+        width: 200px;
+
         & input {
             background-color: inherit;
             border: 1px solid rgba(250, 250, 250, 0.3);

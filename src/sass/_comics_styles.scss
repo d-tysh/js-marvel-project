@@ -225,3 +225,106 @@
         top: -50px;
     }
 }
+
+@media screen and (max-width: 767px) {
+    .hero {
+        &__title {
+            font-size: 50px;
+        }
+
+        &__information {
+            margin-left: 0;
+            width: 100%;
+        }
+
+        &__description {
+            padding-top: 50px;
+        }
+
+        &__container {
+            height: 300px;
+            display: block;
+        }
+
+        &__back-home-link {
+            display: block;
+            margin-top: 30px;
+        }
+    }
+
+    .comics {
+        &__form {
+            flex-direction: column;
+        }
+
+        &__list-item {
+            width: 100%;
+            & img {
+                height: 300px;
+            }
+        }
+
+        &__icon-search {
+            position: relative;
+            display: block;
+            margin-left: auto;
+            right: 0;
+        }
+    }
+
+    .comic-info {
+        max-height: 80vh;
+        flex-direction: column;
+
+        &__img {
+            display: block;
+            margin: 0 auto;
+            width: 60%;
+            height: 60%;
+        }
+
+        &__btn-close {
+            right: 0;
+            top: 0;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    .hero {
+        &__title {
+            font-size: 100px;
+        }
+
+        &__container {
+            height: 600px;
+            display: block;
+        }
+
+        &__description {
+            padding-top: 180px;
+        }
+
+        &__back-home-link {
+            display: block;
+            margin-top: 170px;
+        }
+    }
+
+    .comics {
+        &__list-item {
+            width: calc((100% - 20px) / 2);
+            & img {
+                height: 300px;
+            }
+        }
+    }
+
+    .comic-info {
+        max-height: 70vh;
+
+        &__img {
+            width: 500px;
+        }
+    }
+}
